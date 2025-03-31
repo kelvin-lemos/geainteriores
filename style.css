@@ -1,0 +1,20 @@
+.pagina {
+    background-color: gray;
+}
+
+.bemvindo {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 80px;
+}
+
+.branco {
+    color: white;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .bemvindo {
+        font-size: 1.5rem;
+        /* Tamanho reduzido para celulares */
+    }
+}
