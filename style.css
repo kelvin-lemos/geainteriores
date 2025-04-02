@@ -11,10 +11,18 @@
     color: white;
     font-size: 16px;
 }
+.form {
+    margin: 3px;
+}
 
 @media (max-width: 768px) {
     .bemvindo {
         font-size: 1.5rem;
         /* Tamanho reduzido para celulares */
+    }
+}
+@media (max-width: 768px) {
+    .imagem-celular {
+        display: none;
     }
 }
