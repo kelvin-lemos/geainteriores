@@ -145,22 +145,29 @@
 
                 <div class="col-12 col-md-6 col-lg-5 d-flex flex-column justify-content-center">
                     <div class="p-5">
-                        <form>
+                        <form action="https://formsubmit.co/souseibh@gmail.com" method="post">
                             <div class="mb-3 form">
-                              <label for="exampleInputName1" class="form-label">Digite seu nome</label>
-                              <input type="name" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
-                              <div id="nameHelp" class="form-text">O email será a maneira de contato pricipal.</div>
+                                <label class="form-label">Nome</label>
+                                <input type="name" placeholder="Digite seu nome" class="form-control"
+                                    id="exampleInputName1" aria-describedby="nameHelp" autocomplete="off" required>
                             </div>
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">Digite seu email</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" placeholder="Digite seu email" class="form-control"
+                                    id="exampleInputEmail1" autocomplete="off" required>
                             </div>
+                            <label class="form-label">Mensagem</label>
+                            <textarea name="message" id="" cols="30" rows="10"
+                                placeholder="Digite sua mensagem"></textarea>
                             <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              <label class="form-check-label" for="exampleCheck1">Aceito receber email para contato</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1" required>Aceito receber email para
+                                    contato</label>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
-                          </form>
+                            <input type="hidden" name="_captcha" value="false">
+
+                        </form>
                     </div>
                 </div>
 
