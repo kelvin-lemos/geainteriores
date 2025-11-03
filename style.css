@@ -1,3 +1,4 @@
+/*
 .pagina {
     background-color: gray;
 }
@@ -18,7 +19,7 @@
 @media (max-width: 768px) {
     .bemvindo {
         font-size: 1.5rem;
-        /* Tamanho reduzido para celulares */
+        
     }
 }
 @media (max-width: 768px) {
@@ -26,3 +27,91 @@
         display: none;
     }
 }
+*/
+
+body {
+  margin: 0;
+  font-family: 'Poiret One', sans-serif;
+  background: url('img/cozinha.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* ===== TEXTO PRINCIPAL ===== */
+.bemvindo {
+  font-size: 80px;
+  font-family: 'Poiret One', sans-serif;
+  color: white;
+}
+
+.branco {
+  color: white;
+  font-size: 16px;
+}
+
+.form {
+  margin: 3px;
+}
+
+/* ===== HERO TRANSPARENTE ===== */
+.hero {
+  height: 100vh; /* mantém o tamanho original */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent; /* totalmente transparente */
+}
+
+/* Texto central do hero */
+.hero p {
+  font-size: 80px;
+  background: transparent;
+  color: #fff;
+}
+
+/* ===== SEÇÃO SOBRE (bloqueia o fundo) ===== */
+#sobre {
+  background: #000; /* fundo sólido */
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* ===== CONTEÚDO GERAL (translúcido antes do #sobre) ===== */
+.container,
+.card,
+.carousel,
+footer {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: #fff;
+  transition: all 0.6s ease;
+}
+
+/* Conteúdo dentro da seção sólida */
+#sobre .container,
+#sobre .card,
+#sobre .carousel,
+#sobre footer {
+  background: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: none;
+  color: #fff;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .bemvindo {
+    font-size: 1.5rem; /* reduz tamanho no celular */
+  }
+
+  .imagem-celular {
+    display: none;
+  }
+}
+
+
