@@ -19,24 +19,39 @@
 
 <body>
     <header>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar p-3 bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <img src="img/logo.jpg" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
                     G&A Interiores
                 </a>
-                <a class="fs-5 link-dark link-opacity-50-hover link-offset-2 link-underline link-underline-opacity-0 d-none d-md-block"
-                    href="https://wa.me/+553197858268">Solicitar Orçamento</a>
+
+                <!-- Botão de orçamento estilo WhatsApp -->
+                <a href="https://wa.me/+553197858268" target="_blank" rel="noopener"
+                    class="d-none d-md-flex align-items-center px-4 py-2 text-decoration-none"
+                    style="background-color: #fd8c41; color: white; border-radius: 50px; font-weight: 500;">
+
+                    <span>Solicite um Orçamento</span>
+
+                    <span class="ms-3 d-flex align-items-center justify-content-center"
+                        style="background: green; border-radius: 50%; width: 32px; height: 32px;">
+                        <i class="bi bi-whatsapp" style="color: white;"></i>
+                    </span>
+                </a>
             </div>
         </nav>
     </header>
 
-    <div class="position-relative">
+    <!--<div class="position-relative">
         <img src="img/cozinha.jpg" class="card-img-top" alt="cozinha">
         <div class="position-absolute top-50 start-50 translate-middle">
             <p class="text-white bemvindo">G&A INTERIORES</p>
         </div>
+    </div>-->
+    <div class="hero">
+        <p class="text-white bemvindo">G&A INTERIORES</p>
     </div>
+
     <div class="bg-black">
         <div class="container w-100 p-5">
             <div class="row align-items-center justify-content-around">
