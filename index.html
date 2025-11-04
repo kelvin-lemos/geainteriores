@@ -160,10 +160,10 @@
 
                 <div class="col-12 col-md-6 col-lg-5 d-flex flex-column justify-content-center">
                     <div class="p-5">
-                        <form action="https://formsubmit.co/souseibh@gmail.com" method="post">
+                        <form id="contact-form">
                             <div class="mb-3 form">
                                 <label class="form-label">Nome</label>
-                                <input type="name" placeholder="Digite seu nome" class="form-control"
+                                <input type="name" name="nome" placeholder="Digite seu nome" class="form-control"
                                     id="exampleInputName1" aria-describedby="nameHelp" autocomplete="off" required>
                             </div>
                             <div class="mb-3">
@@ -175,11 +175,16 @@
                             <textarea name="message" id="" cols="30" rows="10"
                                 placeholder="Digite sua mensagem"></textarea>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" name="aceite_email" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1" required>Aceito receber email para
                                     contato</label>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
+                            <input type="hidden" name="_autoresponse"
+                                value="Sua mensagem foi recebida! Responderemos em breve.">
+
+                            <input type="hidden" name="_next"
+                                value="https://kelvin-lemos.github.io/geainteriores/thank.html">
                             <input type="hidden" name="_captcha" value="false">
 
                         </form>
@@ -204,6 +209,25 @@
             <p class="text-center align-middle">Todos direitos reservados. G&A Interirores Ltda.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("l1dlTeSME7gs3f4cs"); 
+        })();
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_fng23se", "template_kquq8cj", this)
+                .then(() => {
+                    alert("Mensagem enviada com sucesso! Verifique seu e-mail.");
+                    window.location.href = "https://kelvin-lemos.github.io/geainteriores/thank.html";
+                }, (error) => {
+                    alert("Ocorreu um erro. Tente novamente mais tarde.");
+                    console.log("Erro:", error);
+                });
+        });
+    </script>
 
 
 </body>
