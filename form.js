@@ -10,6 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // impede recarregar a página
+        
+        
+        const email = form.email.value.trim();
+        const emailError = document.getElementById("email-error");
+        emailError.textContent = ""; // limpa mensagens anteriores
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailError.textContent = "Por favor, insira um e-mail válido.";
+            return; // cancela o envio se o e-mail for inválido
+        }
 
         console.log("Envio iniciado...");
         const formData = new FormData(form);
