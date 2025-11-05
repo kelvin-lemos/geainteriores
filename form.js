@@ -2,20 +2,29 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("l1dlTeSME7gs3f4cs");
 
     const form = document.getElementById("contact-form");
+    const emailInput = form.email;
+    const emailError = document.getElementById("email-error");
 
     if (!form) {
         console.error("Formulário não encontrado.");
         return;
     }
 
+    // 🔍 Verifica o e-mail enquanto o usuário digita
+    emailInput.addEventListener("input", function () {
+        const email = emailInput.value.trim();
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            emailError.textContent = "E-mail inválido.";
+        } else {
+            emailError.textContent = "";
+        }
+    });
+
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // impede recarregar a página
-        
-        
-        const email = form.email.value.trim();
-        const emailError = document.getElementById("email-error");
-        emailError.textContent = ""; // limpa mensagens anteriores
 
+        const email = emailInput.value.trim();
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             emailError.textContent = "Por favor, insira um e-mail válido.";
             return; // cancela o envio se o e-mail for inválido
